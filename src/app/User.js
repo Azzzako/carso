@@ -19,9 +19,9 @@ export default function User() {
       setEmail(res.data.email);
       setUser(res.data.people[0]);
       setCourses(res.data.inscriptions);
-      setLoader(!loader);
+      setLoader(true);
     });
-  }, [loader]);
+  }, []);
 
   return (
     <React.Fragment>
