@@ -18,11 +18,11 @@ export default function CourseCard({
  
   return (
     <div
-      className="w-full h-full flex flex-col justify-center items-center rounded-xl"
+      className="w-full h-full flex flex-col justify-center items-center rounded-xl shadow-xl transition-all shadow-black/50 hover:scale-105"
       style={{ backgroundColor: theme }}
     >
       <div className="group w-full h-96 [perspective:1000px]">
-        <div className="relative h-full w-full  shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="flex flex-col w-full h-full absolute inset-0 justify-center items-center p-4 gap-10">
             <h1
               className="text-center text-xl font-bold text-white"
@@ -31,10 +31,10 @@ export default function CourseCard({
               {course}
             </h1>
 
-            <img src={img} alt={img} className="w-full h-52 object-cover" />
+            <img src={img} alt={img} className="w-full object-contain h-52 md:object-cover" />
           </div>
 
-          <section className="absolute inset-0 h-full w-full rounded-xl bg-black/75 px-12 text-center text-slate-200 duration-500 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <section className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 duration-500 [transform:rotateY(180deg)] [backface-visibility:hidden]">
             <div
               className="w-full h-full flex flex-col justify-center items-center gap-6"
               style={{ fontFamily: "Poppins" }}

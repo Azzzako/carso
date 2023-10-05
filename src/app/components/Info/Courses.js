@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import CourseCard from "./CourseCard";
 import { TextField, FormControlLabel, Checkbox } from "@mui/material";
+import Welcome from "./Welcome";
 
-export default function Courses({ courses }) {
+export default function Courses({ courses, email, user }) {
   const [search, setSearch] = useState("");
   const [ascendingOrder, setAscendingOrder] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [notCompleted, setNotCompleted] = useState(false);
+
+  const totalCourses = courses?.length;
+  const completedCour = courses?.filter((ele) => ele.advance === 100);
+  const incompleteCour = courses?.filter((ele) => ele.advance != 100);
 
   const orderFilter = () => {
     setAscendingOrder(!ascendingOrder);
@@ -71,6 +76,13 @@ export default function Courses({ courses }) {
 
   return (
     <section className="flex flex-col justify-center items-center pt-20">
+      <Welcome
+        email={email}
+        user={user}
+        complete={completedCour}
+        incomplete={incompleteCour}
+        total={totalCourses}
+      />
       <div className="flex flex-col md:flex-row justify-around md:items-center w-full h-full px-24 p-10">
         <TextField
           variant="standard"
@@ -105,7 +117,7 @@ export default function Courses({ courses }) {
         />
       </div>
 
-      <div className="w-full border-b border-black"/>
+      <div className="w-full border-b border-black" />
 
       <div className="w-full flex flex-col p-4 gap-5 sm:grid sm:grid-cols-3 lg:grid lg:grid-cols-4 xl:grid-cols-5 md:p-24">
         {coursesMap}
