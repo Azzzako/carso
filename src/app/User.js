@@ -21,7 +21,7 @@ export default function User() {
       setCourses(res.data.inscriptions);
       setLoader(!loader);
     });
-  }, []);
+  }, [loader]);
 
   return (
     <React.Fragment>
