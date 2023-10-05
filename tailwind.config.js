@@ -12,6 +12,9 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      transform: {
+        'y-180': 'rotateY(3.142rad)', // Define la clase personalizada
+      },
     },
   },
   plugins: [],
