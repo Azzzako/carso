@@ -11,7 +11,7 @@ export default function Welcome({ email, user, total, complete, incomplete }) {
       style={{ fontFamily: "Poppins" }}
     >
       <div className="w-full h-full flex flex-col justify-center items-center gap-4 p-8 text-center relative">
-        <h1>Bienvenido a la Plataforma de capacitacion para el empleo</h1>
+        <h1 className="text-xl italic">Bienvenido a la Plataforma de capacitacion para el empleo</h1>
         <Image src={avatar} alt="avatar" />
         <h1 className="absolute bottom-[154px] text-[125px]">
           {user?.name[0]}
