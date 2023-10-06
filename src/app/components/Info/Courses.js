@@ -37,7 +37,7 @@ export default function Courses({ courses, email, user }) {
         })
       : courses;
 
-  coursesFilter?.sort((a, b) => {
+  const sortedFilter = coursesFilter?.toSorted((a, b) => {
     const courseNameA = a.course.name.toLowerCase();
     const courseNameB = b.course.name.toLowerCase();
     return ascendingOrder
@@ -46,12 +46,12 @@ export default function Courses({ courses, email, user }) {
   });
 
   const completedCourses = completed
-    ? coursesFilter?.filter((element) => element.advance === 100)
-    : coursesFilter;
+    ? sortedFilter?.filter((element) => element.advance === 100)
+    : sortedFilter;
 
   const notCompletedCourses = notCompleted
-    ? coursesFilter?.filter((element) => element.advance !== 100)
-    : coursesFilter;
+    ? sortedFilter?.filter((element) => element.advance !== 100)
+    : sortedFilter;
 
   const selectedCourses = notCompleted ? notCompletedCourses : completedCourses;
 
@@ -72,7 +72,6 @@ export default function Courses({ courses, email, user }) {
     );
   });
 
-  console.log(courses);
 
   return (
     <section className="flex flex-col justify-center items-center pt-20">

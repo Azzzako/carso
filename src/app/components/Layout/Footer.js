@@ -17,6 +17,7 @@ export default function Footer() {
           <span>Aviso de privacidad</span>
           <span>Terminos de uso</span>
         </div>
+
       </div>
 
       <div className="flex flex-col gap-5">
@@ -31,8 +32,8 @@ export default function Footer() {
       <div className="flex flex-col gap-5">
         <h1 className="text-2xl">Descargas</h1>
         <div className="flex flex-col gap-3">
-          <Image src={apple} width={100} height={100} />
-          <Image src={google} width={110} height={100} />
+          <Image src={apple} width={100} height={100} alt="apple" />
+          <Image src={google} width={110} height={100} alt="google" />
         </div>
       </div>
 
