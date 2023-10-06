@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { Avatar, Button, Menu, MenuItem, Tooltip } from "@mui/material";
+import { Avatar, Menu, MenuItem } from "@mui/material";
 import * as logo from "../../images/logo.png";
-import { deepOrange } from "@mui/material/colors";
+import octavio from "../../images/octavio.jpg";
+import { green } from "@mui/material/colors";
 import { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { RxExit } from "react-icons/rx";
@@ -11,12 +12,15 @@ import { LiaRouteSolid } from "react-icons/lia";
 export default function Navbar({ user, email }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const URL ="https://www.eleconomista.com.mx/__export/1554059567165/sites/eleconomista/img/2019/03/31/90330088.jpg_1131660878.jpg"
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  console.log(octavio.default);
   return (
     <div className="w-full h-20 bg-white top-0 z-50 fixed shadow-zinc-600 shadow-lg">
       <div className="w-full h-full flex flex-row items-center justify-between px-4">
@@ -115,16 +119,11 @@ export default function Navbar({ user, email }) {
             </div>
           </Menu>
           <Avatar
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            sx={{ backgroundColor: deepOrange[500] }}
+            sx={{ backgroundColor: green[500] }}
             className="cursor-pointer"
-          >
-            {user?.name[0]}
-          </Avatar>
+            src={URL}
+          />
         </div>
       </div>
     </div>
